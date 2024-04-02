@@ -6,4 +6,4 @@ COPY . .
 
 EXPOSE 8080
 
-RUN npx json-server --watch db.json --port 8080
+CMD ["npx", "json-server", "--watch", "db.json", "--port", "8080"]
