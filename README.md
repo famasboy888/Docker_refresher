@@ -1,49 +1,13 @@
-# Docker Compose
+# Docker Hub commands
 
-Docker compose naming is `docker-compose.yaml`.
-
-```bash
-version: '3.8'                     
-services:
-  data-server:                     <== any name you like
-    build: ./data                  <== where is Dockerfile located
-    container_name: data_c1        <== define container name when running
-    ports:                          <== same ports you defined in docker file
-      - '8080:8080'
-    volumes:
-      - ./data:/data-server         <== allows modification within the local file and not the container
-```
-
-It should be stored at the very root directory of all the projects
+Build docker first. Sample:
 
 ```bash
-├── api                            <== this is app 2
-│   ├── app.js
-│   ├── Dockerfile                  <== App 2 has its own Docker file
-│   ├── package.json
-│   └── package-lock.json
-├── data                           <== this is app 1
-│   ├── db.json
-│   └── Dockerfile                  <== App 1 has its own Docker file
-├── docker-compose.yaml            <== docker compose is stored outsidde
+docker build -t kdev1234/flask-market:0.0.1.RELEASE .
 ```
 
-## Docker compose commands
-
-Start composing: `up`
-
-Detach moded: `-d`
+Then we can push the built image.
 
 ```bash
-docker-compose up -d
+docker push kdev1234/flask-market:0.0.1.RELEASE
 ```
-
-Stop composing and remove all
-
-```bash
-docker-compose down --rmi all
-```
-
-
-
-
