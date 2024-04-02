@@ -14,11 +14,47 @@ EXPOSE 4000                               <== Exposing port of the container
 CMD [ "node", "app.js" ]                   <== Used to execute start command. It is written as an array of strings
 ```
 
- ## Building the image
+## Adding Docker Ignore file
+
+File should be named `.dockerignore`. Treat is like .gitignore
+ 
+
+## Building the image
 
 Tag is for `-t`.  The `dot(.)` is the path relative to the `Dockerfile`
 
- ```bash
+```bash
 docker build -t <image-name> .
 ```
- 
+
+## List image
+
+```bash
+docker image ls
+```
+
+## List running containers
+
+```bash
+docker container ls
+```
+
+
+## Running container
+
+Detach mode: `-d`
+
+Port expose: `-p`
+
+Name: `--name`
+
+```bash
+docker run -d -p 4000:4000 --name sample-app my-app:latest
+```
+
+## Stop running containers
+
+```bash
+docker stop <container-name-or-id>
+```
+
