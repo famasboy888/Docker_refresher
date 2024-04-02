@@ -1,64 +1,17 @@
- # Creating a docker file
+ # Optimizing build using layer cache techniques
 
  ```bash
-FROM node:17-alpine                       <== Creating base image
+ FROM node:17-alpine                  <== This is cached
 
-WORKDIR /app                              <== Specifying working directory insided the container
+WORKDIR /app                          <== This is cached
 
-COPY . .                                  <== First dot specifies the directory in local machine. Second dot is the directory inside the container relative to WORKDIR
+COPY package.json .                   <== copy this so we can run npm install right away
 
-RUN npm install                           <== RUN for downloading dependecies inside the application folder
+RUN npm install                       <== This is cached next time it will be ran
 
-EXPOSE 4000                               <== Exposing port of the container
+COPY . .
 
-CMD [ "node", "app.js" ]                   <== Used to execute start command. It is written as an array of strings
-```
+EXPOSE 4000
 
-## Adding Docker Ignore file
-
-File should be named `.dockerignore`. Treat is like .gitignore
- 
-
-## Building the image
-
-Tag is for `-t`.  The `dot(.)` is the path relative to the `Dockerfile`
-
-```bash
-docker build -t <image-name> .
-```
-
-## List image
-
-```bash
-docker image ls
-```
-
-## List running containers
-
-```bash
-docker ps -a
-```
-
-```bash
-docker container ls
-```
-
-
-## Running container
-
-Detach mode: `-d`
-
-Port expose: `-p`
-
-Name: `--name`
-
-```bash
-docker run -d -p 4000:4000 --name sample-app my-app:latest
-```
-
-## Stop running containers
-
-```bash
-docker stop <container-name-or-id>
-```
-
+CMD [ "node", "app.js" ]
+ ```
