@@ -1,0 +1,40 @@
+{
+  "blogs": [
+    {
+      "id": "7dc2",
+      "title": "Another",
+      "body": "dasdasd",
+      "author": "mario"
+    },
+    {
+      "id": "877a",
+      "title": "Test",
+      "body": "test",
+      "author": "mario"
+    },
+    {
+      "id": "4020",
+      "title": "Test",
+      "body": "test",
+      "author": "mario"
+    },
+    {
+      "id": "035a",
+      "title": "Test",
+      "body": "test",
+      "author": "mario"
+    },
+    {
+      "id": "4078",
+      "title": "huhu",
+      "body": "huhu",
+      "author": "yoshi"
+    },
+    {
+      "id": "a5c5",
+      "title": "sad",
+      "body": "sad",
+      "author": "yoshi"
+    }
+  ]
+}
