@@ -36,6 +36,10 @@ docker image ls
 ## List running containers
 
 ```bash
+docker ps -a
+```
+
+```bash
 docker container ls
 ```
 
