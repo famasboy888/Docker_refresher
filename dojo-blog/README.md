@@ -1,32 +1,21 @@
-# Docker Compose
+# Getting Started with Create React App
 
-Docker compose naming is `docker-compose.yaml`.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-```bash
-version: '3.8'                     
-services:
-  data-server:                     <== any name you like
-    build: ./data                  <== where is Dockerfile located
-    container_name: data_c1        <== define container name when running
-    ports:                          <== same ports you defined in docker file
-      - '8080:8080'
-    volumes:
-      - ./data:/data-server         <== allows modification within the local file and not the container
-```
+## Available Scripts
 
-It should be stored at the very root directory of all the projects
+### `npx create-react-app <app-name>`
 
-```bash
-├── api                            <== this is app 2
-│   ├── app.js
-│   ├── Dockerfile                  <== App 2 has its own Docker file
-│   ├── package.json
-│   └── package-lock.json
-├── data                           <== this is app 1
-│   ├── db.json
-│   └── Dockerfile                  <== App 1 has its own Docker file
-├── docker-compose.yaml            <== docker compose is stored outsidde
-```
+In the project directory, you can run:
 
+### `npm start`
 
+Runs the app in the development mode.
 
+# Creating a Component using emmet Boiler Plate
+
+Type `sfc` Stateless function Component
+
+<p align="left">
+  <img width="50%" height="50%" src="https://github.com/famasboy888/ReactJs_course/assets/23441168/3152d021-2e74-4190-8f54-27d405b9f886">
+</p>

@@ -1,17 +1,32 @@
- # Optimizing build using layer cache techniques
+# Docker Compose
 
- ```bash
- FROM node:17-alpine                  <== This is cached
+Docker compose naming is `docker-compose.yaml`.
 
-WORKDIR /app                          <== This is cached
+```bash
+version: '3.8'                     
+services:
+  data-server:                     <== any name you like
+    build: ./data                  <== where is Dockerfile located
+    container_name: data_c1        <== define container name when running
+    ports:                          <== same ports you defined in docker file
+      - '8080:8080'
+    volumes:
+      - ./data:/data-server         <== allows modification within the local file and not the container
+```
 
-COPY package.json .                   <== copy this so we can run npm install right away
+It should be stored at the very root directory of all the projects
 
-RUN npm install                       <== This is cached next time it will be ran
+```bash
+├── api                            <== this is app 2
+│   ├── app.js
+│   ├── Dockerfile                  <== App 2 has its own Docker file
+│   ├── package.json
+│   └── package-lock.json
+├── data                           <== this is app 1
+│   ├── db.json
+│   └── Dockerfile                  <== App 1 has its own Docker file
+├── docker-compose.yaml            <== docker compose is stored outsidde
+```
 
-COPY . .
 
-EXPOSE 4000
 
-CMD [ "node", "app.js" ]
- ```
