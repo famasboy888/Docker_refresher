@@ -13,3 +13,12 @@ EXPOSE 4000                               <== Exposing port of the container
 
 CMD [ "node", "app.js" ]                   <== Used to execute start command. It is written as an array of strings
 ```
+
+ ## Building the image
+
+Tag is for `-t`.  The `dot(.)` is the path relative to the `Dockerfile`
+
+ ```bash
+docker build -t <image-name> .
+```
+ 
