@@ -28,5 +28,22 @@ It should be stored at the very root directory of all the projects
 ├── docker-compose.yaml            <== docker compose is stored outsidde
 ```
 
+## Docker compose commands
+
+Start composing: `up`
+
+Detach moded: `-d`
+
+```bash
+docker-compose up -d
+```
+
+Stop composing and remove all
+
+```bash
+docker-compose down --rmi all
+```
+
+
 
 
