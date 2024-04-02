@@ -8,7 +8,7 @@ const BlogDetails = () => {
     const history = useHistory();
 
     const handleDelete = () =>{
-        fetch("http://localhost:8080/blogs/"+ blog.id, {
+        fetch("http://192.168.2.77:8080/blogs/"+ blog.id, {
             method: "DELETE",  
         }).then(()=>{
             history.push("/");
