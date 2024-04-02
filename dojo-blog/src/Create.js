@@ -19,7 +19,7 @@ const Create = () => {
 
     const postFunction = (blog) => {
         setTimeout(() => {
-            fetch("http://localhost:8080/blogs", {
+            fetch("http://192.168.2.77:8080/blogs", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(blog)

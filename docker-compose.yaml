@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  data-server:
+    build: ./data
+    container_name: data_c1
+    ports:
+      - '8080:8080'
+    volumes:
+      - ./data: /data-server
+      
