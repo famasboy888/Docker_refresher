@@ -6,6 +6,6 @@ RUN npm install json-server
 
 COPY . .
 
-EXPOSE 8080
+EXPOSE 80
 
-CMD npx json-server --watch db.json --port 8080
+CMD npx json-server --watch db.json --port 80

@@ -4,11 +4,11 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const BlogDetails = () => {
     const { id } = useParams();
-    const { data: blog, isPending, error } = useFetch("http://data-server:8080/blogs/" + id);
+    const { data: blog, isPending, error } = useFetch("http://data-server:80/blogs/" + id);
     const history = useHistory();
 
     const handleDelete = () =>{
-        fetch("http://data-server:8080/blogs/"+ blog.id, {
+        fetch("http://data-server:80/blogs/"+ blog.id, {
             method: "DELETE",  
         }).then(()=>{
             history.push("/");
