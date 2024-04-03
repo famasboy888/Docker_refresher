@@ -1,4 +1,5 @@
 {
+  "proxy": "http://data-server:80",
   "name": "dojo-blog",
   "version": "0.1.0",
   "private": true,

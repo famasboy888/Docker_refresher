@@ -19,7 +19,7 @@ const Create = () => {
 
     const postFunction = (blog) => {
         setTimeout(() => {
-            fetch("http://data-server:80/blogs", {
+            fetch("/blogs", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(blog)
