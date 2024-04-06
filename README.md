@@ -56,9 +56,17 @@ Name: `--name`
 docker run -d -p 4000:4000 --name sample-app my-app:latest
 ```
 
+## Use bash inside container
+
+```bash
+docker exec -it <mycontainer> bash
+```
+
 ## Stop running containers
 
 ```bash
 docker stop <container-name-or-id>
 ```
+
+
 
