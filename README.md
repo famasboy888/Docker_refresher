@@ -68,5 +68,13 @@ docker exec -it <mycontainer> bash
 docker stop <container-name-or-id>
 ```
 
+```bash
+docker stop $(docker ps -a -q)
+```
+
+```bash
+docker rm $(docker ps -a -q)
+```
+
 
 
